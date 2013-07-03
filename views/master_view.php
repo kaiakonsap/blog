@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Pealkiri</title>
+	<title>Blog</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
@@ -29,14 +29,41 @@
 
 	<style>
 		body {
-			padding-top: 60px;
-		}
+			background-image:url('/blog/assets/images/Pink.jpg');
+			background-color: #000000;
+			}
 		body, html {
-			background: url('<?=BASE_URL?>assets/img/iostexture.png');
 			height: 100%;
+			font-family: Verdana;
+			font-size: 11px;
 		}
 		table.table-bordered tr {
-			background-color: #f9f9f9;
+			background-color: #ffffff;
+		}
+		table.table-striped,table.table-bordered{
+			width: 100%;
+			background-color: white;
+
+		}
+		a{
+			color: deeppink;
+		}
+		a:hover{
+			color: lightblue;
+		}
+		h3{
+			font-weight: normal;
+			font-size: 18px;
+		}
+		#container{
+			width:55%;
+			padding-top: 60px;
+			padding-bottom: 2.5%;
+			padding-left: 3%;
+			padding-right: 3%;
+			background-color:#ffffff;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	</style>
 </head>
@@ -49,18 +76,18 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="#">Projekti nimi</a>
+			<a style="color: deeppink;padding-left: 10.5%" class="brand" href="#">Blog</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="<?=BASE_URL?>tests">Esimene leht</a></li>
-					<li><a href="#about">Info</a></li>
-					<li><a href="<?=BASE_URL?>auth/logout">Logi välja</a></li>
+					<li><a style="color: lightblue" href="#about">Info</a></li>
+					<li><a style="color: lightblue"href="<?=BASE_URL?>auth/logout">Logi välja</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
 </div>
-<div>
+<div id="container">
 	<?php
 	require 'views/'.$request->controller.'_'.$request->action.'_view.php';
 	?>
