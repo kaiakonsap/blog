@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7">
 <html class="no-js lt-ie9 lt-ie8">
@@ -6,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Blog</title>
+	<title>Minu blogi</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
@@ -19,6 +20,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 	<script src="<?=ASSETS_URL?>js/plugins.js"></script>
 	<script src="<?=ASSETS_URL?>js/main.js"></script>
+	<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"></script>
 	<script>BASE_URL = '<?=BASE_URL?>'</script>
 
 	<?if(!EMPTY($this->scripts)) : ?>
@@ -36,6 +38,7 @@
 			height: 100%;
 			font-family: Verdana;
 			font-size: 11px;
+			padding-top: 30px;
 		}
 		table.table-bordered tr {
 			background-color: #ffffff;
@@ -56,7 +59,7 @@
 			font-size: 18px;
 		}
 		#container{
-			width:55%;
+			width:46.5%;
 			padding-top: 60px;
 			padding-bottom: 2.5%;
 			padding-left: 3%;
@@ -76,10 +79,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a style="color: deeppink;padding-left: 10.5%" class="brand" href="#">Blog</a>
+			<a style="color: deeppink;padding-left: 10.5%" class="brand" href="#">Minu blogi</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li class="active"><a href="<?=BASE_URL?>tests">Esimene leht</a></li>
+					<li class="active"><a href="<?=BASE_URL?>posts">Postitused</a></li>
 					<li><a style="color: lightblue" href="#about">Info</a></li>
 					<li><a style="color: lightblue"href="<?=BASE_URL?>auth/logout">Logi välja</a></li>
 				</ul>
@@ -92,7 +95,10 @@
 	require 'views/'.$request->controller.'_'.$request->action.'_view.php';
 	?>
 </div>
+<script src="<?=ASSETS_URL?>js/vendor/bootstrap-collapse.js"></script>
+
 <!--[if lt IE 7]>
+
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
 
