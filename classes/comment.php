@@ -1,6 +1,6 @@
 <?php
 class comment {
-	function add(){
+	static function add(){
 		global $request;
 		$data=array();
 		$data['post_id']=$request->get[0];
@@ -9,4 +9,3 @@ class comment {
 		insert('comment',$data );
 	}
 }
-$comment=new comment;

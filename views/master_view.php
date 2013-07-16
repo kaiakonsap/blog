@@ -13,15 +13,20 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">-->
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+	<!--<script>window.jQuery || document.write('<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"><\/script>')
+	</script>-->
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>-->
+	<link href="<?=ASSETS_URL ?>css/bootstrap-combined.min.css" rel="stylesheet">
 	<script src="<?=ASSETS_URL ?>js/vendor/modernizr-2.6.2.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"></script>
+	<script src="<?=ASSETS_URL?>js/vendor/jquery-ui.min.js"></script>
 	<script src="<?=ASSETS_URL?>js/plugins.js"></script>
 	<script src="<?=ASSETS_URL?>js/main.js"></script>
 	<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"></script>
 	<script>BASE_URL = '<?=BASE_URL?>'</script>
+
 
 	<?if(!EMPTY($this->scripts)) : ?>
 		<?foreach($this->scripts as $script) : ?>
@@ -38,7 +43,6 @@
 			height: 100%;
 			font-family: Verdana;
 			font-size: 11px;
-			padding-top: 30px;
 		}
 		table.table-bordered tr {
 			background-color: #ffffff;
