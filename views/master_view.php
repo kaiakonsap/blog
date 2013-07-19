@@ -18,6 +18,8 @@
 	<!--<script>window.jQuery || document.write('<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"><\/script>')
 	</script>-->
 	<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>-->
+
+
 	<link href="<?=ASSETS_URL ?>css/bootstrap-combined.min.css" rel="stylesheet">
 	<script src="<?=ASSETS_URL ?>js/vendor/modernizr-2.6.2.min.js"></script>
 	<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"></script>
@@ -72,17 +74,59 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		#custom-search-form {
+			margin:0;
+			margin-top: 5px;
+			padding: 0;
+
+		}
+
+		#custom-search-form .search-query {
+			padding-right: 3px;
+			padding-right: 4px \9;
+			padding-left: 3px;
+			padding-left: 4px \9;
+			float:right;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+
+		#custom-search-form button {
+			border: 0;
+			background: none;
+			/** belows styles are working good */
+			padding: 2px 5px;
+			margin-top: 2px;
+			position: relative;
+			left: -28px;
+			/* IE7-8 doesn't have border-radius, so don't indent the padding */
+			margin-bottom: 0;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+
+		.search-query:focus + button {
+			z-index: 3;
+		}
 	</style>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
+
 	<div class="navbar-inner">
 		<div class="container">
+
 			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
+
 			<a style="color: deeppink;padding-left: 10.5%" class="brand" href="#">Minu blogi</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
@@ -90,6 +134,15 @@
 					<li><a style="color: lightblue" href="#about">Info</a></li>
 					<li><a style="color: lightblue"href="<?=BASE_URL?>auth/logout">Logi välja</a></li>
 				</ul>
+				{
+
+				<form id="custom-search-form" method="GET" action="<?=BASE_URL?>posts/search" class="form-search
+					form-horizontal pull-right" >
+				<div class="input-append span3" style="padding-top: 0px;">
+				<input type="text" class="search-query" placeholder="Otsi..." >
+				<button type="submit" class="btn"><i class="icon-search"></i></button>
+     </div>
+    </form>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
