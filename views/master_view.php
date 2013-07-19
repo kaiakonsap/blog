@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7">
 <html class="no-js lt-ie9 lt-ie8">
@@ -20,73 +19,79 @@
 	<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>-->
 
 
-	<link href="<?=ASSETS_URL ?>css/bootstrap-combined.min.css" rel="stylesheet">
-	<script src="<?=ASSETS_URL ?>js/vendor/modernizr-2.6.2.min.js"></script>
-	<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"></script>
-	<script src="<?=ASSETS_URL?>js/vendor/jquery-ui.min.js"></script>
-	<script src="<?=ASSETS_URL?>js/plugins.js"></script>
-	<script src="<?=ASSETS_URL?>js/main.js"></script>
-	<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"></script>
+	<link href="<?= ASSETS_URL ?>css/bootstrap-combined.min.css" rel="stylesheet">
+	<script src="<?= ASSETS_URL ?>js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="<?= ASSETS_URL ?>js/vendor/jquery-1.9.1.min.js"></script>
+	<script src="<?= ASSETS_URL ?>js/vendor/jquery-ui.min.js"></script>
+	<script src="<?= ASSETS_URL ?>js/plugins.js"></script>
+	<script src="<?= ASSETS_URL ?>js/main.js"></script>
+	<script src="<?= ASSETS_URL ?>js/vendor/jquery-1.9.1.min.js"></script>
 	<script>BASE_URL = '<?=BASE_URL?>'</script>
 
 
-	<?if(!EMPTY($this->scripts)) : ?>
-		<?foreach($this->scripts as $script) : ?>
-			<script src="<?=ASSETS_URL?>js/<?=$script?>"></script>
-		<?endforeach?>
-	<?endif?>
+	<? if (! EMPTY($this->scripts)) : ?>
+		<? foreach ($this->scripts as $script) : ?>
+			<script src="<?= ASSETS_URL ?>js/<?= $script ?>"></script>
+		<? endforeach ?>
+	<? endif ?>
 
 	<style>
 		body {
-			background-image:url('/blog/assets/images/Pink.jpg');
+			background-image: url('/blog/assets/images/Pink.jpg');
 			background-color: #000000;
-			}
+		}
+
 		body, html {
 			height: 100%;
 			font-family: Verdana;
 			font-size: 11px;
 		}
+
 		table.table-bordered tr {
 			background-color: #ffffff;
 		}
-		table.table-striped,table.table-bordered{
+
+		table.table-striped, table.table-bordered {
 			width: 100%;
 			background-color: white;
 
 		}
-		a{
+
+		a {
 			color: deeppink;
 		}
-		a:hover{
+
+		a:hover {
 			color: lightblue;
 		}
-		h3{
+
+		h3 {
 			font-weight: normal;
 			font-size: 18px;
 		}
-		#container{
-			width:46.5%;
+
+		#container {
+			width: 46.5%;
 			padding-top: 60px;
 			padding-bottom: 2.5%;
 			padding-left: 3%;
 			padding-right: 3%;
-			background-color:#ffffff;
+			background-color: #ffffff;
 			margin-left: auto;
 			margin-right: auto;
 		}
+
 		#custom-search-form {
-			margin:0;
+			margin: 0;
 			margin-top: 5px;
 			padding: 0;
-
 		}
 
 		#custom-search-form .search-query {
 			padding-right: 3px;
-			padding-right: 4px \9;
+			padding-right: 4px    \9;
 			padding-left: 3px;
-			padding-left: 4px \9;
-			float:right;
+			padding-left: 4px    \9;
 			/* IE7-8 doesn't have border-radius, so don't indent the padding */
 
 			margin-bottom: 0;
@@ -113,6 +118,8 @@
 		.search-query:focus + button {
 			z-index: 3;
 		}
+
+			}
 	</style>
 </head>
 <body>
@@ -128,22 +135,24 @@
 			</button>
 
 			<a style="color: deeppink;padding-left: 10.5%" class="brand" href="#">Minu blogi</a>
+
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li class="active"><a href="<?=BASE_URL?>posts">Postitused</a></li>
+					<li class="active"><a href="<?= BASE_URL ?>posts">Postitused</a></li>
 					<li><a style="color: lightblue" href="#about">Info</a></li>
-					<li><a style="color: lightblue"href="<?=BASE_URL?>auth/logout">Logi välja</a></li>
+					<li><a style="color: lightblue" href="<?= BASE_URL ?>auth/logout">Logi välja</a></li>
 				</ul>
 				{
 
-				<form id="custom-search-form" method="GET" action="<?=BASE_URL?>posts/search" class="form-search
-					form-horizontal pull-right" >
-				<div class="input-append span3" style="padding-top: 0px;">
-				<input type="text" class="search-query" placeholder="Otsi..." >
-				<button type="submit" class="btn"><i class="icon-search"></i></button>
-     </div>
-    </form>
-			</div><!--/.nav-collapse -->
+				<form class="navbar-form form-search pull-right" method="GET" action="<?= BASE_URL ?>posts/search"
+				      accept-charset="UTF-8">
+					<div class="input-append span3" style="padding-top: 0px;">
+						<input type="text" class="search-query" placeholder="Otsi...">
+						<button type="submit" class="btn"><i class="icon-search"></i></button>
+					</div>
+				</form>
+			</div>
+			<!--/.nav-collapse -->
 		</div>
 	</div>
 </div>
@@ -152,11 +161,13 @@
 	require 'views/'.$request->controller.'_'.$request->action.'_view.php';
 	?>
 </div>
-<script src="<?=ASSETS_URL?>js/vendor/bootstrap-collapse.js"></script>
+<script src="<?= ASSETS_URL ?>js/vendor/bootstrap-collapse.js"></script>
 
 <!--[if lt IE 7]>
 
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your
+	browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your
+	experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
