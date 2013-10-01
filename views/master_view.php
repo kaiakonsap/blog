@@ -140,7 +140,12 @@
 				<ul class="nav">
 					<li class="active"><a href="<?= BASE_URL ?>posts">Postitused</a></li>
 					<li><a style="color: lightblue" href="#about">Info</a></li>
-					<li><a style="color: lightblue" href="<?= BASE_URL ?>auth/logout">Logi välja</a></li>
+					<li><a style="color: lightblue"  href="<?= BASE_URL ?>auth/logout"<?if(isset($_SESSION['user_id'])):?>
+					     >Logi välja
+						<?else:?>
+					       >Logi sisse
+					       <?endif?>
+							</a></li>
 				</ul>
 				{
 

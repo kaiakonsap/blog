@@ -22,12 +22,13 @@ class tags
 		global $request;
 		require 'classes/tag.php';
 		$tag_name = $request->get[0];
-		$posts = get_all(
-			"SELECT *, count(comment_id) AS comment_count FROM post NATURAL JOIN user
-			 NATURAL JOIN comment
-			 NATURAL JOIN post_tags
-			  NATURAL JOIN tag WHERE tag_name='$tag_name' GROUP BY post.post_id"
-		);
+		$posts=get_all("SELECT * FROM post
+			LEFT JOIN user ON user.user_id=post.user_id
+			 LEFT JOIN post_tags ON post.post_id=post_tags.post_id
+			  LEFT JOIN tag ON tag.tag_id=post_tags.tag_id
+			  LEFT JOIN comment ON post.post_id=comment.post_id
+			  WHERE tag.tag_name='$tag_name'");
+
 		$tags = tag::get_tags();
 		require 'views/master_view.php';
 	}

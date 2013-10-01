@@ -59,7 +59,7 @@
 <body style="background-image: url(assets/img/iostexture.png)">
 
 <div class="container">
-
+	<h3>  <a href="<?= BASE_URL ?>">Tagasi blogisse</a></h3>
 	<form method="post" class="form-signin">
 		<h2 class="form-signin-heading">Logi sisse</h2>
 		<input name="username" type="text" class="input-block-level" placeholder="kasutajanimi">

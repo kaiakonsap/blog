@@ -26,7 +26,15 @@
 		</tr>
 		</tbody>
 	<? endif ?>
+
 </table>
+<i class="icon-user"></i> by <a href="<?=BASE_URL?>users/view/<?=$post['user_id']?>"><?=$author?></a>
+<i class="icon-tags"></i> Tags :
+<?if( isset($tags[$post['post_id']])):
+	foreach($tags[$post['post_id']] as $tag):?>
+		<a href="<?=BASE_URL?>tags/view/<?=$tag?>"><span class="label
+							label-info"><?=$tag?></span></a>
+	<?endforeach;endif?>
 <h2>Kommentaarid</h2>
 <table>
 	<? foreach ($comments as $comment) : ?>
@@ -45,8 +53,7 @@
 
 </span>
 <form method="POST" id="form">
-	<input type="text" name="comment_author" id="comment_author"/>
-	<textarea name="comment_text" id="comment_text" cols="100" rows="5" style="width: auto"></textarea>
+	<textarea name="comment_text" id="comment_text" cols="100" rows="5"placeholder="Kommenteeri..." style="width: auto"></textarea>
 	<button type="submit" onclick="return check()">Submit
 	</button>
 </form>

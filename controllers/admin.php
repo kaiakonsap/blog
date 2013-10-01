@@ -25,6 +25,8 @@ class admin {
 			if(isset($_POST['tags'])){
 				$tags=strpos($_POST['tags'], ',') !== false && strpos($_POST['tags'], ',') >1?
 					explode(',',$_POST['tags']):$_POST['tags'];
+
+			//Tuleb panna kontrollima koma asetsemist alguses või lõpus, siis kurtma või lisama stringina vms
 				$tag_ids=array();
 				foreach ($tags as $tag){
 					$new_array['tag_name']=$tag;
