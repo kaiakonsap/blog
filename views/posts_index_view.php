@@ -15,7 +15,7 @@
 			</div>
 			<div class="span6">
 				<p>
-					<?=$post['post_text']?>
+					<?=$post['short_text']	;var_dump($post['short_text'])?>
 				</p>
 				<p><a class="btn" href="<?=BASE_URL?>posts/view/<?=$post['post_id']?>">Read more</a></p>
 			</div>

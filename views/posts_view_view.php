@@ -21,7 +21,7 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td> <?= $post['post_text'] ?></td>
+			<td> <?= $post['post_text']?></td>
 			<td>&nbsp</td>
 		</tr>
 		</tbody>

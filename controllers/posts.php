@@ -6,7 +6,7 @@ class posts
 	{
 		require 'classes/tag.php';
 		global $request;
-		$posts = get_all("SELECT *,SUBSTRING(post_text, 5), count(comment_id) as comment_count FROM post NATURAL JOIN user
+		$posts = get_all("SELECT *,LEFT(post_text, 50) AS short_text, count(comment_id) as comment_count FROM post NATURAL JOIN user
 		LEFT JOIN comment USING (post_id) WHERE post.deleted=0 GROUP BY post.post_id
 		ORDER BY post.post_time DESC;") ;
 		$tags=tag::get_tags();
