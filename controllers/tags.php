@@ -13,7 +13,7 @@ class tags
 	function index()
 	{
 		global $request;
-		$tags = get_all("SELECT *FROM tag");
+		$tags = get_all("SELECT tag_name,COUNT(post_id) AS mycount FROM tag NATURAL JOIN post_tags GROUP BY tag_name ");
 		require 'views/master_view.php';
 	}
 
@@ -22,13 +22,8 @@ class tags
 		global $request;
 		require 'classes/tag.php';
 		$tag_name = $request->get[0];
-		$posts=get_all("SELECT * FROM post
-			LEFT JOIN user ON user.user_id=post.user_id
-			 LEFT JOIN post_tags ON post.post_id=post_tags.post_id
-			  LEFT JOIN tag ON tag.tag_id=post_tags.tag_id
-			  LEFT JOIN comment ON post.post_id=comment.post_id
-			  WHERE tag.tag_name='$tag_name'");
-
+		$tag_id=get_one("SELECT tag_id FROM tag WHERE tag_name='$tag_name'");
+		$posts=get_all("SELECT * FROM post NATURAL JOIN user NATURAL JOIN comment NATURAL JOIN post_tags WHERE tag_id='$tag_id'");
 		$tags = tag::get_tags();
 		require 'views/master_view.php';
 	}
