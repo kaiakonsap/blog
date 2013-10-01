@@ -1,5 +1,4 @@
 <h4><strong><a href="<?= BASE_URL ?>tags/view/<?= $tag_name ?>"><?= $tag_name ?></a></strong></h4>
-
 <? if (isset($posts)):foreach ($posts as $post): ?>
 
 <div class="row">

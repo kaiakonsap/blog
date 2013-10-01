@@ -23,7 +23,7 @@ class tags
 		require 'classes/tag.php';
 		$tag_name = $request->get[0];
 		$tag_id=get_one("SELECT tag_id FROM tag WHERE tag_name='$tag_name'");
-		$posts=get_all("SELECT * FROM post NATURAL JOIN user NATURAL JOIN comment NATURAL JOIN post_tags WHERE tag_id='$tag_id'");
+		$posts=get_all("SELECT * FROM post NATURAL JOIN user NATURAL JOIN post_tags WHERE tag_id='$tag_id'");
 		$tags = tag::get_tags();
 		require 'views/master_view.php';
 	}
